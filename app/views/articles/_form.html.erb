@@ -1,5 +1,6 @@
 <%= simple_form_for @article do |f| %>
   <%= f.input :title %>
   <%= f.input :content, as: :rich_text_area %>
+  <%= f.association :categories, as: :check_boxes, value_method: :id, label_method: :category, include_blank: false, include_hidden: false %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
